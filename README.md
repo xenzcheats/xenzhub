@@ -77,6 +77,7 @@ if not isPlayerWhitelisted(LocalPlayer.Name) then
     inputBox.Text = "❌ Você não está na whitelist!"
     task.wait(2)
     inputBox.Text = ""
+    screenGui:Destroy()  -- Remover a tela de verificação
     return
 end
 
@@ -84,6 +85,9 @@ end
 inputBox.Text = "✔️ Você está na whitelist!"
 sendWebhook(LocalPlayer.Name)
 task.wait(1)
+
+-- Remover a tela de verificação após a verificação
+screenGui:Destroy()
 
 -- 🔓 Script principal liberado
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xenzcheats/naoiwdawpdjaowhd/refs/heads/main/README.md"))()
